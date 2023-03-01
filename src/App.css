@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+.container {
+    width: 700px;
+    margin: 0 auto;
+    padding-top: 40px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*Form*/
+.form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form-input {
+    margin-top: 5px;
+    display: block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.form-input--error {
+    border: 1px solid red;
 }
 
-.App-link {
-  color: #61dafb;
+.form-input-error-message {
+    color: red;
+    font-size: 12px;
+    margin: 3px 0 0 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*Table*/
+table {
+    border-collapse: collapse;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+table td {
+    padding: 15px;
+}
+
+table thead th {
+    background-color: #54585d;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+    border: 1px solid #54585d;
+}
+
+table tbody td {
+    color: #636363;
+    border: 1px solid #dddfe1;
+    width: 25%;
+}
+
+table tbody tr {
+    background-color: #f9fafb;
+    cursor: pointer;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+table tbody tr:hover {
+    background-color: #D7D7D7FF;
+}
+
+/*Modal*/
+.modal-overlay {
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    display: block;
+    background: white;
+    width: 60%;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.modal-box h2 {
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+
+.modal-status {
+    display: block;
+    margin-bottom: 20px;
 }

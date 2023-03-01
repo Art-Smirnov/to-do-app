@@ -15,26 +15,23 @@ const todoSlice = createSlice({
   reducers: {
     addTodo(state, action: PayloadAction<Omit<Todo, 'id' | 'status'>>) {
       state.todos.push({
-        id: new Date().toISOString(),
+        id: (state.todos.length + 1).toString(),
         title: action.payload.title,
         description: action.payload.description,
         status: false
       });
     },
-    toggleComplete(state, action: PayloadAction<Todo>) {
+    toggleComplete(state, action: PayloadAction<Pick<Todo, 'id'>>) {
       const toggledTodo = state.todos.find(
         (todo) => todo.id === action.payload.id
       );
       if (toggledTodo) {
         toggledTodo.status = !toggledTodo.status;
       }
-    },
-    removeTodo(state, action: PayloadAction<Todo>) {
-      state.todos = state.todos.filter((todo) => todo.id !== action.payload.id);
     }
   }
 });
 
-export const { addTodo, toggleComplete, removeTodo } = todoSlice.actions;
+export const { addTodo, toggleComplete } = todoSlice.actions;
 
 export default todoSlice.reducer;
